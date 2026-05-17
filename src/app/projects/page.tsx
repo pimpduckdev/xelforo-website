@@ -71,7 +71,7 @@ const projects: Project[] = [
 
 export default function Projects() {
   return (
-    <div className="relative flex flex-col bg-black font-sans overflow-hidden">
+    <div className="relative flex flex-col bg-[#0a0a0f] font-sans overflow-hidden">
       {/* Subtle voxel background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(at_top_left,_rgba(0,255,136,0.02)_0%,_transparent_30%)]"></div>
@@ -80,7 +80,7 @@ export default function Projects() {
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center text-center text-white space-y-12 px-6 py-24 max-w-5xl mx-auto">
         {/* Page Title */}
-        <h1 className="text-4xl font-bold letter-wider tracking-widest text-[#00ff88] drop-shadow-lg animate-float">
+        <h1 className="text-4xl font-bold letter-wider tracking-widest text-[#4a9eff] drop-shadow-lg animate-float">
           Projects & Portfolio
         </h1>
         
@@ -92,34 +92,34 @@ export default function Projects() {
         {/* Filters */}
         <div className="flex flex-wrap gap-2 mb-8 justify-center">
           <button 
-            className="px-4 py-2 bg-[#00ff88]/10 border border-[#00ff88]/20 rounded-full hover:bg-[#00ff88]/20 transition-all duration-500 text-sm font-medium group"
+            className="px-4 py-2 bg-[#4a9eff]/10 border border-[#4a9eff]/20 rounded-full hover:bg-[#4a9eff]/20 transition-all duration-500 text-sm font-medium group"
           >
             <span className="relative z-0">All</span>
-            <div className="absolute inset-0 bg-[#00ff88]/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none rounded-full"></div>
+            <div className="absolute inset-0 bg-[#4a9eff]/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none rounded-full"></div>
           </button>
           <button 
-            className="px-4 py-2 bg-[#00ff88]/10 border border-[#00ff88]/20 rounded-full hover:bg-[#00ff88]/20 transition-all duration-500 text-sm font-medium group"
+            className="px-4 py-2 bg-[#4a9eff]/10 border border-[#4a9eff]/20 rounded-full hover:bg-[#4a9eff]/20 transition-all duration-500 text-sm font-medium group"
           >
             <span className="relative z-0">Games</span>
-            <div className="absolute inset-0 bg-[#00ff88]/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none rounded-full"></div>
+            <div className="absolute inset-0 bg-[#4a9eff]/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none rounded-full"></div>
           </button>
           <button 
-            className="px-4 py-2 bg-[#00ff88]/10 border border-[#00ff88]/20 rounded-full hover:bg-[#00ff88]/20 transition-all duration-500 text-sm font-medium group"
+            className="px-4 py-2 bg-[#4a9eff]/10 border border-[#4a9eff]/20 rounded-full hover:bg-[#4a9eff]/20 transition-all duration-500 text-sm font-medium group"
           >
             <span className="relative z-0">Tools</span>
-            <div className="absolute inset-0 bg-[#00ff88]/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none rounded-full"></div>
+            <div className="absolute inset-0 bg-[#4a9eff]/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none rounded-full"></div>
           </button>
           <button 
-            className="px-4 py-2 bg-[#00ff88]/10 border border-[#00ff88]/20 rounded-full hover:bg-[#00ff88]/20 transition-all duration-500 text-sm font-medium group"
+            className="px-4 py-2 bg-[#4a9eff]/10 border border-[#4a9eff]/20 rounded-full hover:bg-[#4a9eff]/20 transition-all duration-500 text-sm font-medium group"
           >
             <span className="relative z-0">Plugins</span>
-            <div className="absolute inset-0 bg-[#00ff88]/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none rounded-full"></div>
+            <div className="absolute inset-0 bg-[#4a9eff]/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none rounded-full"></div>
           </button>
           <button 
-            className="px-4 py-2 bg-[#00ff88]/10 border border-[#00ff88]/20 rounded-full hover:bg-[#00ff88]/20 transition-all duration-500 text-sm font-medium group"
+            className="px-4 py-2 bg-[#4a9eff]/10 border border-[#4a9eff]/20 rounded-full hover:bg-[#4a9eff]/20 transition-all duration-500 text-sm font-medium group"
           >
             <span className="relative z-0">Web</span>
-            <div className="absolute inset-0 bg-[#00ff88]/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none rounded-full"></div>
+            <div className="absolute inset-0 bg-[#4a9eff]/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none rounded-full"></div>
           </button>
         </div>
         
@@ -131,9 +131,9 @@ export default function Projects() {
         </div>
         
         {/* View More Button (placeholder for pagination) */}
-        <Link href="#" className="inline-block px-6 py-3 bg-[#00ff88]/20 hover:bg-[#00ff88]/30 rounded-full border border-[#00ff88]/50 transition-all duration-500 text-sm font-medium hover:text-[#00ff88] hover:shadow-[0_0_10px_rgba(0,255,136,0.5)] group">
+        <Link href="#" className="inline-block px-6 py-3 bg-[#4a9eff]/20 hover:bg-[#4a9eff]/30 rounded-full border border-[#4a9eff]/50 transition-all duration-500 text-sm font-medium hover:text-[#4a9eff] hover:shadow-[0_0_10px_rgba(0,255,136,0.5)] group">
           <span className="relative z-0">View All Projects</span>
-          <div className="absolute inset-0 bg-[#00ff88]/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none rounded-full"></div>
+          <div className="absolute inset-0 bg-[#4a9eff]/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none rounded-full"></div>
         </Link>
       </div>
     </div>

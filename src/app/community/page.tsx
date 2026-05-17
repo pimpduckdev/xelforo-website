@@ -21,19 +21,19 @@ const recentThreads = [
 
 export default function Community() {
   return (
-    <div className="relative flex flex-col bg-black">
+    <div className="relative flex flex-col bg-[#0a0a0f]">
       {/* Hero */}
       <section className="relative flex flex-col items-center justify-center py-24 px-6 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(0,255,136,0.06)_0%,_transparent_60%)]"></div>
         <div className="relative z-10 text-center max-w-4xl">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
-            Developer <span className="text-[#00ff88]">Community</span>
+            Developer <span className="text-[#4a9eff]">Community</span>
           </h1>
           <p className="text-lg text-zinc-400 max-w-xl mx-auto mb-8">
             Connect with fellow developers. Share projects, get feedback, find collaborators, and grow together.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <a href="https://discord.gg/xelforo" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-[#00ff88]/15 hover:bg-[#00ff88]/25 border border-[#00ff88]/40 hover:border-[#00ff88]/70 text-[#00ff88] font-semibold rounded-xl transition-all duration-500 hover:shadow-[0_0_25px_rgba(0,255,136,0.15)]">
+            <a href="https://discord.gg/xelforo" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-[#4a9eff]/15 hover:bg-[#4a9eff]/25 border border-[#4a9eff]/40 hover:border-[#4a9eff]/70 text-[#4a9eff] font-semibold rounded-xl transition-all duration-500 hover:shadow-[0_0_25px_rgba(0,255,136,0.15)]">
               💬 Join Discord
             </a>
             <Link href="#forums" className="px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white font-semibold rounded-xl transition-all duration-500">
@@ -44,7 +44,7 @@ export default function Community() {
       </section>
 
       {/* Stats */}
-      <section className="py-12 px-6 bg-[#080808]">
+      <section className="py-12 px-6 bg-[#08080c]">
         <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
           {[
             { label: 'Members', value: '2,400+' },
@@ -53,7 +53,7 @@ export default function Community() {
             { label: 'Online Now', value: '142' },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-[#00ff88]">{stat.value}</div>
+              <div className="text-2xl md:text-3xl font-bold text-[#4a9eff]">{stat.value}</div>
               <div className="text-sm text-zinc-400 mt-1">{stat.label}</div>
             </div>
           ))}
@@ -66,10 +66,10 @@ export default function Community() {
           <h2 className="text-2xl font-bold text-white mb-8">Forum Categories</h2>
           <div className="grid md:grid-cols-2 gap-4">
             {forumCategories.map((cat) => (
-              <Link key={cat.name} href="#" className="group bg-[#111] border border-[#00ff88]/10 rounded-xl p-5 hover:border-[#00ff88]/30 hover:bg-[#00ff88]/5 transition-all duration-500 flex items-start gap-4">
+              <Link key={cat.name} href="#" className="group bg-[#111] border border-[#4a9eff]/10 rounded-xl p-5 hover:border-[#4a9eff]/30 hover:bg-[#4a9eff]/5 transition-all duration-500 flex items-start gap-4">
                 <div className="text-2xl flex-shrink-0">{cat.icon}</div>
                 <div className="flex-1 min-w-0">
-                  <h3 className="text-base font-semibold text-white group-hover:text-[#00ff88] transition-colors mb-1">{cat.name}</h3>
+                  <h3 className="text-base font-semibold text-white group-hover:text-[#4a9eff] transition-colors mb-1">{cat.name}</h3>
                   <p className="text-xs text-zinc-400 mb-2">{cat.description}</p>
                   <div className="flex items-center gap-3 text-xs text-zinc-500">
                     <span>{cat.threads} threads</span>
@@ -84,20 +84,20 @@ export default function Community() {
       </section>
 
       {/* Recent Threads */}
-      <section className="py-16 px-6 bg-[#080808]">
+      <section className="py-16 px-6 bg-[#08080c]">
         <div className="max-w-5xl mx-auto">
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-2xl font-bold text-white">Recent Discussions</h2>
-            <Link href="#" className="text-sm text-[#00ff88] hover:underline">View All →</Link>
+            <Link href="#" className="text-sm text-[#4a9eff] hover:underline">View All →</Link>
           </div>
           <div className="space-y-3">
             {recentThreads.map((thread) => (
-              <Link key={thread.title} href="#" className="group block bg-[#111] border border-[#00ff88]/10 rounded-xl p-5 hover:border-[#00ff88]/25 hover:bg-[#00ff88]/5 transition-all duration-300">
+              <Link key={thread.title} href="#" className="group block bg-[#111] border border-[#4a9eff]/10 rounded-xl p-5 hover:border-[#4a9eff]/25 hover:bg-[#4a9eff]/5 transition-all duration-300">
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-sm font-semibold text-white group-hover:text-[#00ff88] transition-colors mb-1 truncate">{thread.title}</h3>
+                    <h3 className="text-sm font-semibold text-white group-hover:text-[#4a9eff] transition-colors mb-1 truncate">{thread.title}</h3>
                     <div className="flex items-center gap-3 text-xs text-zinc-500">
-                      <span className="text-[#00ff88]">{thread.author}</span>
+                      <span className="text-[#4a9eff]">{thread.author}</span>
                       <span>•</span>
                       <span>{thread.category}</span>
                       <span>•</span>
@@ -123,7 +123,7 @@ export default function Community() {
             Create an account to post in forums, comment on tutorials, and connect with other developers.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <button className="px-8 py-3.5 bg-[#00ff88]/15 hover:bg-[#00ff88]/25 border border-[#00ff88]/40 hover:border-[#00ff88]/70 text-[#00ff88] font-semibold rounded-xl transition-all duration-500 hover:shadow-[0_0_25px_rgba(0,255,136,0.15)]">
+            <button className="px-8 py-3.5 bg-[#4a9eff]/15 hover:bg-[#4a9eff]/25 border border-[#4a9eff]/40 hover:border-[#4a9eff]/70 text-[#4a9eff] font-semibold rounded-xl transition-all duration-500 hover:shadow-[0_0_25px_rgba(0,255,136,0.15)]">
               Create Account
             </button>
             <button className="px-8 py-3.5 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white font-semibold rounded-xl transition-all duration-500">
