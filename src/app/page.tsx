@@ -10,12 +10,12 @@ export default function Home() {
 
         <div className="relative z-10 text-center max-w-3xl animate-fade-in-up">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight leading-[1.1]">
-            Build. Ship.{" "}
-            <span className="text-[#4a9eff]">Create.</span>
+            Building games.{" "}
+            <span className="text-[#4a9eff">Shipping code.</span>
           </h1>
 
           <p className="text-lg md:text-xl text-[#8b8fa3] mb-10 max-w-xl mx-auto leading-relaxed">
-            Game developer, engineer, and educator. Building tools, writing tutorials, and sharing knowledge with the developer community.
+            Software engineer and game developer. Creating tools, writing tutorials, and sharing everything I've learned along the way.
           </p>
 
           <div className="flex flex-wrap gap-3 justify-center">

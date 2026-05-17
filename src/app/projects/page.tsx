@@ -1,140 +1,82 @@
-import ProjectCard from "@/components/ProjectCard";
 import Link from "next/link";
 
-type Project = {
-  id: string;
-  title: string;
-  description: string;
-  techStack: string[];
-  status: 'completed' | 'in-progress' | 'upcoming';
-  category: 'games' | 'tools' | 'plugins' | 'web';
-  link: string;
-};
-
-// Sample project data - in a real app, this would come from a CMS or database
-const projects: Project[] = [
+const projects = [
   {
-    id: "xelforo",
-    title: "Xelforo",
-    description: "An upcoming voxel-based sandbox game featuring procedural generation, multiplayer capabilities, and a robust modding system. Built with a custom game engine in C++ and OpenGL.",
-    techStack: ["C++", "OpenGL", "GLFW", "ImGui", "Entt"],
-    status: "in-progress",
-    category: "games",
-    link: "/games/xelforo",
+    title: "Minecraft Plugins",
+    description: "Custom plugins developed for Minecraft servers starting at age 13. Economy systems, land protection, chat management, minigame frameworks, and more. Published on CurseForge under PimpDuck12.",
+    tags: ["Java", "Spigot", "Bukkit", "Minecraft"],
+    status: "Completed",
+    link: "https://www.curseforge.com/members/pimpduck12/projects",
+    external: true,
   },
   {
-    id: "bunkerrun",
     title: "BunkerRun",
-    description: "A fast-paced Java FPS game featuring procedural level generation, weapon customization, and intense arena combat. Created from scratch without external game engines.",
-    techStack: ["Java", "LWJGL", "OpenGL", "Javaluator"],
-    status: "completed",
-    category: "games",
-    link: "/games/bunkerrun",
+    description: "A fast-paced first-person shooter built entirely from scratch in Java. Procedural level generation, weapon customization, and arena combat. No game engines — just LWJGL and OpenGL.",
+    tags: ["Java", "LWJGL", "OpenGL", "FPS"],
+    status: "Completed",
+    link: "#",
+    external: false,
   },
   {
-    id: "xelzip",
     title: "Xelzip",
-    description: "A powerful file decompiler and archive utility designed for game modding and reverse engineering. Supports multiple archive formats with CLI and GUI interfaces.",
-    techStack: ["C++", "Qt", "Boost", "Capstone"],
-    status: "completed",
-    category: "tools",
+    description: "A file decompiler and archive utility for game modding and reverse engineering. Supports multiple archive formats with both CLI and GUI interfaces.",
+    tags: ["C++", "Qt", "Reverse Engineering"],
+    status: "Completed",
     link: "/tools/xelzip",
+    external: false,
   },
   {
-    id: "diamcraft-plugin",
-    title: "DiamCraft Essentials",
-    description: "A comprehensive Minecraft server plugin suite featuring economy systems, land protection, chat management, and minigame framework. Used on a network of 5+ servers.",
-    techStack: ["Java", "Spigot API", "Maven", "MySQL"],
-    status: "completed",
-    category: "plugins",
-    link: "#",
-  },
-  {
-    id: "portfolio-site",
     title: "Xelforo.io",
-    description: "This very website - a full-stack platform showcasing developer portfolio, game ecosystem, tutorials, community features, and e-commerce storefront.",
-    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Three.js", "Node.js"],
-    status: "in-progress",
-    category: "web",
+    description: "This website — a full-stack platform built with Next.js, TypeScript, and Tailwind CSS. Showcasing projects, tutorials, and tools for the developer community.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+    status: "In Progress",
     link: "/",
-  },
-  {
-    id: "xelchat",
-    title: "XelChat",
-    description: "A lightweight, self-hosted chat application with end-to-end encryption, file sharing, and cross-platform clients. Built for developer communities.",
-    techStack: ["Node.js", "Socket.IO", "React", "Electron"],
-    status: "upcoming",
-    category: "web",
-    link: "#",
+    external: false,
   },
 ];
 
 export default function Projects() {
   return (
-    <div className="relative flex flex-col bg-[#0a0a0f] font-sans overflow-hidden">
-      {/* Subtle voxel background */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(at_top_left,_rgba(0,255,136,0.02)_0%,_transparent_30%)]"></div>
-      </div>
-      
-      {/* Content */}
-      <div className="relative z-10 flex flex-col items-center text-center text-white space-y-12 px-6 py-24 max-w-5xl mx-auto">
-        {/* Page Title */}
-        <h1 className="text-4xl font-bold letter-wider tracking-widest text-[#4a9eff] drop-shadow-lg animate-float">
-          Projects & Portfolio
-        </h1>
-        
-        {/* Subtitle */}
-        <p className="text-xl max-w-md text-zinc-300">
-          A showcase of my work in game development, software engineering, and open-source contributions
-        </p>
-        
-        {/* Filters */}
-        <div className="flex flex-wrap gap-2 mb-8 justify-center">
-          <button 
-            className="px-4 py-2 bg-[#4a9eff]/10 border border-[#4a9eff]/20 rounded-full hover:bg-[#4a9eff]/20 transition-all duration-500 text-sm font-medium group"
-          >
-            <span className="relative z-0">All</span>
-            <div className="absolute inset-0 bg-[#4a9eff]/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none rounded-full"></div>
-          </button>
-          <button 
-            className="px-4 py-2 bg-[#4a9eff]/10 border border-[#4a9eff]/20 rounded-full hover:bg-[#4a9eff]/20 transition-all duration-500 text-sm font-medium group"
-          >
-            <span className="relative z-0">Games</span>
-            <div className="absolute inset-0 bg-[#4a9eff]/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none rounded-full"></div>
-          </button>
-          <button 
-            className="px-4 py-2 bg-[#4a9eff]/10 border border-[#4a9eff]/20 rounded-full hover:bg-[#4a9eff]/20 transition-all duration-500 text-sm font-medium group"
-          >
-            <span className="relative z-0">Tools</span>
-            <div className="absolute inset-0 bg-[#4a9eff]/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none rounded-full"></div>
-          </button>
-          <button 
-            className="px-4 py-2 bg-[#4a9eff]/10 border border-[#4a9eff]/20 rounded-full hover:bg-[#4a9eff]/20 transition-all duration-500 text-sm font-medium group"
-          >
-            <span className="relative z-0">Plugins</span>
-            <div className="absolute inset-0 bg-[#4a9eff]/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none rounded-full"></div>
-          </button>
-          <button 
-            className="px-4 py-2 bg-[#4a9eff]/10 border border-[#4a9eff]/20 rounded-full hover:bg-[#4a9eff]/20 transition-all duration-500 text-sm font-medium group"
-          >
-            <span className="relative z-0">Web</span>
-            <div className="absolute inset-0 bg-[#4a9eff]/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none rounded-full"></div>
-          </button>
+    <div className="relative flex flex-col bg-[#0a0a0f] font-sans">
+      <div className="relative z-10 flex flex-col px-6 py-24 max-w-5xl mx-auto w-full">
+        <div className="mb-16">
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-3">Projects</h1>
+          <p className="text-[#8b8fa3] max-w-lg">A collection of games, plugins, tools, and applications I've built over the years.</p>
         </div>
-        
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+
+        <div className="grid md:grid-cols-2 gap-5">
           {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+            <Link
+              key={project.title}
+              href={project.link}
+              target={project.external ? "_blank" : undefined}
+              rel={project.external ? "noopener noreferrer" : undefined}
+              className="group bg-[#111118] border border-white/5 rounded-xl p-6 hover:border-[#4a9eff]/20 transition-all duration-300"
+            >
+              <div className="flex items-center justify-between mb-3">
+                <span className={`px-2 py-0.5 text-xs font-medium rounded-full ${
+                  project.status === 'Completed'
+                    ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/15'
+                    : 'bg-amber-500/10 text-amber-400 border border-amber-500/15'
+                }`}>
+                  {project.status}
+                </span>
+                {project.external && (
+                  <svg className="w-4 h-4 text-[#5a5e70] group-hover:text-[#4a9eff] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                )}
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-[#4a9eff] transition-colors">{project.title}</h3>
+              <p className="text-[#8b8fa3] text-sm mb-4 leading-relaxed">{project.description}</p>
+              <div className="flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                  <span key={tag} className="px-2.5 py-1 bg-white/5 text-[#8b8fa3] text-xs rounded-md border border-white/5">{tag}</span>
+                ))}
+              </div>
+            </Link>
           ))}
         </div>
-        
-        {/* View More Button (placeholder for pagination) */}
-        <Link href="#" className="inline-block px-6 py-3 bg-[#4a9eff]/20 hover:bg-[#4a9eff]/30 rounded-full border border-[#4a9eff]/50 transition-all duration-500 text-sm font-medium hover:text-[#4a9eff] hover:shadow-[0_0_10px_rgba(0,255,136,0.5)] group">
-          <span className="relative z-0">View All Projects</span>
-          <div className="absolute inset-0 bg-[#4a9eff]/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none rounded-full"></div>
-        </Link>
       </div>
     </div>
   );
