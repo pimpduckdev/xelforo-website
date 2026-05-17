@@ -3,112 +3,169 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="relative">
-      {/* ===== HERO ===== */}
-      <section className="relative flex flex-col items-center justify-center min-h-screen px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(74,158,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(74,158,255,0.03)_1px,transparent_1px)] bg-[size:64px_64px]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(74,158,255,0.06)_0%,transparent_70%)]"></div>
-
-        <div className="relative z-10 text-center max-w-3xl animate-fade-in-up">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight leading-[1.1]">
-            Build. Ship.{" "}
-            <span className="text-[#4a9eff]">Create.</span>
+      {/* Hero */}
+      <section className="pt-32 pb-20 px-6">
+        <div className="max-w-3xl mx-auto animate-fade-in">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#1a1a1a] tracking-tight leading-[1.2] mb-6">
+            Software engineer & game developer. I build tools, write code, and share what I learn.
           </h1>
-
-          <p className="text-lg md:text-xl text-[#8b8fa3] mb-10 max-w-xl mx-auto leading-relaxed">
-            Game developer, engineer, and educator. Building tools, writing tutorials, and sharing knowledge with the developer community.
+          <p className="text-lg text-[#6b7280] mb-8 max-w-2xl leading-relaxed">
+            Over a decade of experience in Java, C++, and full-stack development. From Minecraft plugins to game engines — I've been shipping code since 2012.
           </p>
-
-          <div className="flex flex-wrap gap-3 justify-center">
-            <Link href="/projects" className="px-6 py-3 bg-[#4a9eff] hover:bg-[#3d8bde] text-white font-medium rounded-lg transition-all duration-200 text-sm">
+          <div className="flex flex-wrap gap-3">
+            <Link href="/projects" className="px-5 py-2.5 bg-[#2563eb] hover:bg-[#1d4ed8] text-white text-sm font-medium rounded-lg transition-colors duration-150">
               View Projects
             </Link>
-            <Link href="/tutorials" className="px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white font-medium rounded-lg transition-all duration-200 text-sm">
+            <Link href="/tutorials" className="px-5 py-2.5 bg-[#f3f4f6] hover:bg-[#e5e7eb] text-[#1a1a1a] text-sm font-medium rounded-lg transition-colors duration-150">
               Read Tutorials
             </Link>
-            <Link href="/about" className="px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-[#8b8fa3] hover:text-white font-medium rounded-lg transition-all duration-200 text-sm">
+            <Link href="/about" className="px-5 py-2.5 border border-[#e5e7eb] hover:border-[#d1d5db] text-[#6b7280] hover:text-[#1a1a1a] text-sm font-medium rounded-lg transition-colors duration-150">
               About Me
             </Link>
           </div>
         </div>
-
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
-          <div className="w-5 h-8 rounded-full border border-white/10 flex items-start justify-center p-1.5">
-            <div className="w-1 h-2 bg-[#4a9eff] rounded-full animate-bounce"></div>
-          </div>
-        </div>
       </section>
 
-      {/* ===== TUTORIALS ===== */}
-      <section className="py-24 px-6 bg-[#08080c]">
+      {/* Selected Projects */}
+      <section className="py-16 px-6 bg-[#f8f9fa] border-t border-[#e5e7eb]">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">Tutorials</h2>
-            <p className="text-[#8b8fa3] max-w-md mx-auto">In-depth, step-by-step guides for game developers. From Java to C++, networking to game loops.</p>
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-2xl font-bold text-[#1a1a1a]">Selected Projects</h2>
+            <Link href="/projects" className="text-sm text-[#2563eb] hover:text-[#1d4ed8] font-medium">View all →</Link>
           </div>
-
-          <div className="grid md:grid-cols-3 gap-5">
+          <div className="grid md:grid-cols-2 gap-4">
             {[
-              { title: 'Java Game Window from Scratch', desc: 'Set up a game window using Java and LWJGL — the foundation for any Java game.', level: 'Beginner', time: '45 min', href: '/tutorials/creating-a-java-game-window' },
-              { title: 'Building a Game Server', desc: 'Create a multiplayer game server in Java with sockets and multithreading.', level: 'Intermediate', time: '1 hour', href: '/tutorials/building-a-simple-game-server' },
-              { title: 'Your First C++ Game Loop', desc: 'The core of game development — input, update, render with SDL2.', level: 'Beginner', time: '30 min', href: '/tutorials/first-cpp-game-loop' },
-            ].map((t) => (
-              <Link key={t.title} href={t.href} className="group bg-[#111118] border border-white/5 rounded-xl p-6 hover:border-[#4a9eff]/20 transition-all duration-300">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="px-2 py-0.5 bg-[#4a9eff]/8 text-[#4a9eff] text-xs rounded-full">{t.level}</span>
-                  <span className="text-xs text-[#5a5e70]">{t.time}</span>
+              {
+                title: "Minecraft Plugins",
+                desc: "Custom plugins developed for Minecraft servers starting at age 13. Economy systems, land protection, chat management, and minigame frameworks published on CurseForge.",
+                tags: ["Java", "Spigot", "Bukkit"],
+                link: "https://www.curseforge.com/members/pimpduck12/projects",
+                external: true,
+              },
+              {
+                title: "BunkerRun",
+                desc: "A first-person shooter built entirely from scratch in Java. Procedural level generation, weapon customization, and arena combat — no game engines.",
+                tags: ["Java", "LWJGL", "OpenGL"],
+                link: "#",
+                external: false,
+              },
+              {
+                title: "Xelzip",
+                desc: "A file decompiler and archive utility for game modding and reverse engineering. Supports multiple formats with CLI and GUI interfaces.",
+                tags: ["C++", "Qt"],
+                link: "/tools/xelzip",
+                external: false,
+              },
+              {
+                title: "Game Engine Development",
+                desc: "Building a custom voxel-based game engine in C++ with OpenGL. Procedural generation, multiplayer networking, and a robust modding system.",
+                tags: ["C++", "OpenGL", "Engine"],
+                link: "#",
+                external: false,
+              },
+            ].map((project) => (
+              <Link
+                key={project.title}
+                href={project.link}
+                target={project.external ? "_blank" : undefined}
+                rel={project.external ? "noopener noreferrer" : undefined}
+                className="group bg-white border border-[#e5e7eb] rounded-lg p-5 hover:border-[#d1d5db] transition-colors duration-150"
+              >
+                <div className="flex items-start justify-between mb-2">
+                  <h3 className="text-base font-semibold text-[#1a1a1a] group-hover:text-[#2563eb] transition-colors">{project.title}</h3>
+                  {project.external && (
+                    <svg className="w-4 h-4 text-[#9ca3af] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                    </svg>
+                  )}
                 </div>
-                <h3 className="text-base font-semibold text-white mb-2 group-hover:text-[#4a9eff] transition-colors">{t.title}</h3>
-                <p className="text-sm text-[#8b8fa3] leading-relaxed">{t.desc}</p>
-              </Link>
-            ))}
-          </div>
-
-          <div className="text-center mt-10">
-            <Link href="/tutorials" className="text-[#4a9eff] text-sm font-medium hover:underline">View all tutorials →</Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== PROJECTS ===== */}
-      <section className="py-24 px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">Projects</h2>
-            <p className="text-[#8b8fa3] max-w-md mx-auto">Tools and applications I've built for the developer community.</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {[
-              { title: 'Xelzip', desc: 'A file decompiler and archive utility for game modding and reverse engineering. Supports multiple formats with CLI and GUI.', tags: ['C++', 'Qt', 'Reverse Engineering'], href: '/tools/xelzip' },
-              { title: 'BunkerRun', desc: 'A fast-paced Java FPS game built entirely from scratch. Procedural levels, weapon customization, arena combat.', tags: ['Java', 'LWJGL', 'OpenGL'], href: '/projects' },
-            ].map((p) => (
-              <Link key={p.title} href={p.href} className="group bg-[#111118] border border-white/5 rounded-xl p-8 hover:border-[#4a9eff]/20 transition-all duration-300">
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#4a9eff] transition-colors">{p.title}</h3>
-                <p className="text-[#8b8fa3] text-sm mb-4 leading-relaxed">{p.desc}</p>
-                <div className="flex flex-wrap gap-2">
-                  {p.tags.map((tag) => (
-                    <span key={tag} className="px-2.5 py-1 bg-white/5 text-[#8b8fa3] text-xs rounded-md border border-white/5">{tag}</span>
+                <p className="text-sm text-[#6b7280] mb-3 leading-relaxed">{project.desc}</p>
+                <div className="flex flex-wrap gap-1.5">
+                  {project.tags.map((tag) => (
+                    <span key={tag} className="px-2 py-0.5 bg-[#f3f4f6] text-[#6b7280] text-xs rounded">{tag}</span>
                   ))}
                 </div>
               </Link>
             ))}
           </div>
+        </div>
+      </section>
 
-          <div className="text-center mt-10">
-            <Link href="/projects" className="text-[#4a9eff] text-sm font-medium hover:underline">View all projects →</Link>
+      {/* Tutorials */}
+      <section className="py-16 px-6 border-t border-[#e5e7eb]">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-2xl font-bold text-[#1a1a1a]">Tutorials</h2>
+            <Link href="/tutorials" className="text-sm text-[#2563eb] hover:text-[#1d4ed8] font-medium">View all →</Link>
+          </div>
+          <div className="grid md:grid-cols-3 gap-4">
+            {[
+              { title: "Creating a Java Game Window from Scratch", desc: "Set up a game window using Java and LWJGL — the foundation for any Java game.", level: "Beginner", time: "45 min", href: "/tutorials/creating-a-java-game-window" },
+              { title: "Building a Game Server in Java", desc: "Create a multiplayer game server with sockets and multithreading.", level: "Intermediate", time: "1 hour", href: "/tutorials/building-a-simple-game-server" },
+              { title: "Your First C++ Game Loop", desc: "The core of game development — input, update, render with SDL2.", level: "Beginner", time: "30 min", href: "/tutorials/first-cpp-game-loop" },
+            ].map((t) => (
+              <Link key={t.title} href={t.href} className="group bg-[#f8f9fa] border border-[#e5e7eb] rounded-lg p-5 hover:border-[#d1d5db] transition-colors duration-150">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="px-2 py-0.5 bg-[#2563eb]/8 text-[#2563eb] text-xs font-medium rounded">{t.level}</span>
+                  <span className="text-xs text-[#9ca3af]">{t.time}</span>
+                </div>
+                <h3 className="text-sm font-semibold text-[#1a1a1a] mb-1.5 group-hover:text-[#2563eb] transition-colors">{t.title}</h3>
+                <p className="text-sm text-[#6b7280] leading-relaxed">{t.desc}</p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ===== NEWSLETTER ===== */}
-      <section className="py-20 px-6 bg-[#08080c]">
-        <div className="max-w-lg mx-auto text-center">
-          <h2 className="text-2xl font-bold text-white mb-3">Stay Updated</h2>
-          <p className="text-[#8b8fa3] text-sm mb-6">New tutorials, project updates, and development insights. No spam.</p>
-          <form className="flex flex-col sm:flex-row gap-2 max-w-sm mx-auto">
-            <input type="email" placeholder="your@email.com" className="flex-1 px-4 py-3 bg-[#111118] border border-white/10 rounded-lg text-white placeholder-[#5a5e70] focus:outline-none focus:border-[#4a9eff]/40 text-sm" />
-            <button type="submit" className="px-5 py-3 bg-[#4a9eff] hover:bg-[#3d8bde] text-white font-medium rounded-lg transition-all duration-200 text-sm whitespace-nowrap">Subscribe</button>
-          </form>
+      {/* Skills */}
+      <section className="py-16 px-6 bg-[#f8f9fa] border-t border-[#e5e7eb]">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl font-bold text-[#1a1a1a] mb-8">Technical Skills</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div>
+              <h3 className="text-sm font-semibold text-[#1a1a1a] mb-3">Languages</h3>
+              <div className="flex flex-wrap gap-1.5">
+                {['Java', 'C++', 'JavaScript', 'TypeScript', 'Python', 'HTML/CSS'].map((s) => (
+                  <span key={s} className="px-2.5 py-1 bg-white border border-[#e5e7eb] text-[#6b7280] text-xs rounded">{s}</span>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-[#1a1a1a] mb-3">Frameworks & Tools</h3>
+              <div className="flex flex-wrap gap-1.5">
+                {['Next.js', 'React', 'Node.js', 'LWJGL', 'OpenGL', 'SDL2', 'Spigot API', 'Qt'].map((s) => (
+                  <span key={s} className="px-2.5 py-1 bg-white border border-[#e5e7eb] text-[#6b7280] text-xs rounded">{s}</span>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-[#1a1a1a] mb-3">Other</h3>
+              <div className="flex flex-wrap gap-1.5">
+                {['Git', 'Docker', 'PostgreSQL', 'REST APIs', 'Multithreading', 'CMake'].map((s) => (
+                  <span key={s} className="px-2.5 py-1 bg-white border border-[#e5e7eb] text-[#6b7280] text-xs rounded">{s}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact CTA */}
+      <section className="py-20 px-6 border-t border-[#e5e7eb]">
+        <div className="max-w-2xl mx-auto text-center">
+          <h2 className="text-2xl font-bold text-[#1a1a1a] mb-3">Get in Touch</h2>
+          <p className="text-[#6b7280] mb-6">Interested in collaborating or have a question? Feel free to reach out.</p>
+          <div className="flex flex-wrap gap-3 justify-center">
+            <a href="https://github.com/pimpduckdev" target="_blank" rel="noopener noreferrer" className="px-5 py-2.5 bg-[#1a1a1a] hover:bg-[#333] text-white text-sm font-medium rounded-lg transition-colors duration-150">
+              GitHub
+            </a>
+            <a href="https://www.curseforge.com/members/pimpduck12/projects" target="_blank" rel="noopener noreferrer" className="px-5 py-2.5 border border-[#e5e7eb] hover:border-[#d1d5db] text-[#6b7280] hover:text-[#1a1a1a] text-sm font-medium rounded-lg transition-colors duration-150">
+              CurseForge
+            </a>
+            <Link href="/about" className="px-5 py-2.5 border border-[#e5e7eb] hover:border-[#d1d5db] text-[#6b7280] hover:text-[#1a1a1a] text-sm font-medium rounded-lg transition-colors duration-150">
+              About Me
+            </Link>
+          </div>
         </div>
       </section>
     </div>

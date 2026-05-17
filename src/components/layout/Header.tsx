@@ -1,87 +1,63 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/projects', label: 'Projects' },
   { href: '/tutorials', label: 'Tutorials' },
-  { href: '/shop', label: 'Shop' },
   { href: '/about', label: 'About' },
 ];
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled
-        ? 'bg-[#0a0a0f]/95 backdrop-blur-md border-b border-white/5'
-        : 'bg-transparent'
-    }`}>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="flex items-center h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2 group flex-shrink-0">
-            <div className="w-7 h-7 rounded bg-[#4a9eff]/10 border border-[#4a9eff]/20 flex items-center justify-center">
-              <span className="text-[#4a9eff] font-bold text-xs font-mono">X</span>
-            </div>
-            <span className="text-base font-semibold text-white group-hover:text-[#4a9eff] transition-colors duration-200">
-              xelforo.io
-            </span>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-[#e5e7eb]">
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="flex items-center justify-between h-14">
+          <Link href="/" className="text-[15px] font-semibold text-[#1a1a1a]">
+            Andrew Groves
           </Link>
 
-          {/* Nav links - centered */}
-          <nav className="hidden md:flex items-center space-x-8 mx-auto">
+          <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm text-[#8b8fa3] hover:text-white transition-colors duration-200 py-1"
+                className="text-sm text-[#6b7280] hover:text-[#1a1a1a] transition-colors duration-150"
               >
                 {link.label}
               </Link>
             ))}
           </nav>
 
-          {/* Spacer for mobile */}
-          <div className="flex-1 md:hidden"></div>
-
-          {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-md text-[#8b8fa3] hover:text-white transition-colors duration-200"
+            className="md:hidden p-2 -mr-2 text-[#6b7280] hover:text-[#1a1a1a]"
             aria-label="Toggle menu"
           >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
               {isOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
               )}
             </svg>
           </button>
         </div>
       </div>
 
-      {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden bg-[#0a0a0f]/98 backdrop-blur-md border-t border-white/5">
-          <div className="px-4 py-3 space-y-1">
+        <div className="md:hidden bg-white border-b border-[#e5e7eb]">
+          <div className="px-6 py-3 space-y-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="block px-3 py-2.5 text-sm text-[#8b8fa3] hover:text-white rounded-md transition-colors duration-200"
+                className="block px-3 py-2 text-sm text-[#6b7280] hover:text-[#1a1a1a] rounded-md hover:bg-[#f8f9fa]"
               >
                 {link.label}
               </Link>
