@@ -5,11 +5,9 @@ import { useState, useEffect } from 'react';
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/games', label: 'Games' },
   { href: '/projects', label: 'Projects' },
   { href: '/tutorials', label: 'Tutorials' },
   { href: '/shop', label: 'Shop' },
-  { href: '/community', label: 'Community' },
   { href: '/about', label: 'About' },
 ];
 
@@ -36,7 +34,7 @@ export default function Header() {
               <span className="text-[#4a9eff] font-bold text-sm font-mono">X</span>
             </div>
             <span className="text-lg font-semibold tracking-tight text-white group-hover:text-[#4a9eff] transition-colors duration-300">
-              xelforo
+              xelforo.io
             </span>
           </Link>
 
@@ -51,15 +49,6 @@ export default function Header() {
               </Link>
             ))}
           </nav>
-
-          <div className="hidden md:flex items-center">
-            <Link
-              href="/games/xelforo"
-              className="px-4 py-2 bg-[#4a9eff]/10 hover:bg-[#4a9eff]/20 border border-[#4a9eff]/25 text-[#4a9eff] text-sm font-medium rounded-md transition-all duration-200"
-            >
-              Play Beta
-            </Link>
-          </div>
 
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -90,15 +79,6 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
-            <div className="pt-2 border-t border-white/5">
-              <Link
-                href="/games/xelforo"
-                onClick={() => setIsOpen(false)}
-                className="block w-full text-center px-4 py-2.5 bg-[#4a9eff]/10 border border-[#4a9eff]/25 text-[#4a9eff] font-medium rounded-md"
-              >
-                Play Beta
-              </Link>
-            </div>
           </div>
         </div>
       )}
